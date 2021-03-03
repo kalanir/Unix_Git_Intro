@@ -2,6 +2,19 @@
 
 ## I want to create a new repository
 Manually go onto your profile, click the + button at the top right, and click either import or create new repository. We generally have been adding the MIT license to our public repositories (cupcakes and coding).
+example repo name: `GitUnix_Carpentries` (don't initialize ReadME)
+
+## …and push my current repo up using the command line
+example workflow:
+```
+echo "# GitUnix_Carpentries" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:kalanir/GitUnix_Carpentries.git
+git push -u origin main
+```
 
 ## I want to clone a repository and/or update
 Cloning means:
