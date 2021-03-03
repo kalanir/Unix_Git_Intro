@@ -31,49 +31,38 @@ Cloning means: copying repository locally
 
 example workflow:
 ```
-➜  Kistler_Utilities git:(master) git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+➜  Unix_Git_Intro git:(main) git status
+On branch main
+Your branch is up to date with 'origin/main'.
 
-	how_tos/
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   GitHub_intro.md
 
-nothing added to commit but untracked files present (use "git add" to track)
-➜  Kistler_Utilities git:(master) ✗ git add .
-➜  Kistler_Utilities git:(master) ✗ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  Unix_Git_Intro git:(main) ✗ git add GitHub_intro.md
+➜  Unix_Git_Intro git:(main) ✗ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+  (use "git restore --staged <file>..." to unstage)
+	modified:   GitHub_intro.md
 
-	new file:   how_tos/JupyterNotebook_onAWS.md
-	new file:   how_tos/RStudio_onAWS.md
-	new file:   how_tos/Reflow_basic.md
-
-➜  Kistler_Utilities git:(master) ✗ git commit -m "new files"
-[master 229d4f2] new files
- 3 files changed, 179 insertions(+)
- create mode 100644 how_tos/JupyterNotebook_onAWS.md
- create mode 100644 how_tos/RStudio_onAWS.md
- create mode 100644 how_tos/Reflow_basic.md
-➜  Kistler_Utilities git:(master) git status
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-nothing to commit, working tree clean
-➜  Kistler_Utilities git:(master) git push
-Counting objects: 6, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (6/6), 3.51 KiB | 3.51 MiB/s, done.
-Total 6 (delta 0), reused 0 (delta 0)
-To https://github.com/kalanir/Kistler_Utilities.git
-   9e7c37b..229d4f2  master -> master
-➜  Kistler_Utilities git:(master) git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-nothing to commit, working tree clean
+➜  Unix_Git_Intro git:(main) ✗ git commit -m "example push"
+[main 089e25a] example push
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+➜  Unix_Git_Intro git:(main) git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 371 bytes | 371.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:kalanir/Unix_Git_Intro.git
+   2c6c16a..089e25a  main -> main
 
 ```
 
@@ -86,62 +75,105 @@ nothing to commit, working tree clean
 - `git push origin <branch name>`: pushes branch to repository. Go online to decide whether to merge new branch to master if you have the permission to.
 - `git checkout <branch name`: allows you to switch between branches
 
-example:
+example workflow:
 ```
-➜  fakerepo git:(master) touch kalani.txt
-➜  fakerepo git:(master) ✗ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
+➜  Unix_Git_Intro git:(main) touch test.txt
+➜  Unix_Git_Intro git:(main) ✗ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
-	kalani.txt
+	test.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
-➜  fakerepo git:(master) ✗ git checkout -b 20181025_branch
-Switched to a new branch '20181025_branch'
-➜  fakerepo git:(20181025_branch) ✗ git branch
-* 20181025_branch
-  master
-➜  fakerepo git:(20181025_branch) ✗ git status
-On branch 20181025_branch
+➜  Unix_Git_Intro git:(main) ✗ git checkout -b 20210302_branch
+Switched to a new branch '20210302_branch'
+➜  Unix_Git_Intro git:(20210302_branch) ✗ git status
+On branch 20210302_branch
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
-	kalani.txt
+	test.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
-➜  fakerepo git:(20181025_branch) ✗ git add kalani.txt
-➜  fakerepo git:(20181025_branch) ✗ git status
-On branch 20181025_branch
+➜  Unix_Git_Intro git:(20210302_branch) ✗ git add test.txt
+➜  Unix_Git_Intro git:(20210302_branch) ✗ git status
+On branch 20210302_branch
 Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+  (use "git restore --staged <file>..." to unstage)
+	new file:   test.txt
 
-	new file:   kalani.txt
-
-➜  fakerepo git:(20181025_branch) ✗ git commit -m "branch practice"
-[20181025_branch e119344] branch practice
+➜  Unix_Git_Intro git:(20210302_branch) ✗ git commit -m "branch practice"
+[20210302_branch 656d3e7] branch practice
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 kalani.txt
-➜  fakerepo git:(20181025_branch) git push origin 20181025_branch
-Counting objects: 3, done.
-Delta compression using up to 4 threads.
+ create mode 100644 test.txt
+➜  Unix_Git_Intro git:(20210302_branch) git push origin 20210302_branch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
 Compressing objects: 100% (2/2), done.
-Writing objects: 100% (3/3), 273 bytes | 273.00 KiB/s, done.
+Writing objects: 100% (3/3), 269 bytes | 269.00 KiB/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 remote:
-remote: Create a pull request for '20181025_branch' on GitHub by visiting:
-remote:      https://github.com/kalanir/fakerepo/pull/new/20181025_branch
+remote: Create a pull request for '20210302_branch' on GitHub by visiting:
+remote:      https://github.com/kalanir/Unix_Git_Intro/pull/new/20210302_branch
 remote:
-To https://github.com/kalanir/fakerepo.git
- * [new branch]      20181025_branch -> 20181025_branch
-➜  fakerepo git:(20181025_branch) git checkout master
-Switched to branch 'master'
-Your branch is up-to-date with 'origin/master'.
-➜  fakerepo git:(master) git checkout 20181025_branch
-Switched to branch '20181025_branch'
+To github.com:kalanir/Unix_Git_Intro.git
+ * [new branch]      20210302_branch -> 20210302_branch
+➜  Unix_Git_Intro git:(20210302_branch) git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
 ```
 ## I want to merge my branch to origin/master
 - Go online and you will see a merge request
-- command line methods to do this, will post later
+- Remember to git pull locally to get updates
+
+## I want to revert file back to a previous commit
+- `HEAD` vs `HEAD~1` vs `HEAD~123`: The most recent end of the chain is referred to as HEAD; we can refer to previous commits using the ~ notation, so HEAD~1 means “the previous commit”, while HEAD~123 goes back 123 commits from where we are now.
+- `git diff HEAD~3 file.txt`: get differences between a commit (HEAD~3) and our working directory
+- `git show HEAD~3 file.txt`: shows us what changes we made at an older commit (HEAD~3) as well as the commit message
+- `git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b file.txt`: get differences between working directory and particular commit id
+- `git checkout f22b25e3233b4645dabd0d81e651fe074bd8e73b file.txt`: checks out (i.e., restores) an old version of a file by commit id
+-  `git checkout`: put things back the way they were 
+- `git log`: displays commits using those long strings of digits and letters
+example code:
+```
+➜  Unix_Git_Intro git:(main) ✗ echo "testing" >> test.txt
+➜  Unix_Git_Intro git:(main) ✗ cat test.txt
+testing
+➜  Unix_Git_Intro git:(main) ✗ git add test.txt
+➜  Unix_Git_Intro git:(main) ✗ git diff HEAD test.txt
+➜  Unix_Git_Intro git:(main) ✗ git commit -m "test add"
+➜  Unix_Git_Intro git:(main) ✗ echo "test2" >> test.txt
+➜  Unix_Git_Intro git:(main) ✗ cat test.txt
+testing
+test2
+➜  Unix_Git_Intro git:(main) ✗ git add test.txt
+➜  Unix_Git_Intro git:(main) ✗ git commit -m "test5"
+[main 571e556] test5
+ 1 file changed, 1 insertion(+)
+➜  Unix_Git_Intro git:(main) ✗ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 257 bytes | 257.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:kalanir/Unix_Git_Intro.git
+   9e88423..571e556  main -> main
+➜  Unix_Git_Intro git:(main) ✗ git diff HEAD test.txt     
+➜  Unix_Git_Intro git:(main) ✗ git diff HEAD~2 test.txt
+➜  Unix_Git_Intro git:(main) ✗ git show HEAD~1 test.txt
+➜  Unix_Git_Intro git:(main) ✗ git checkout b7d14460b25d25b03621e83e6dcd18b3d05367e4 test.txt
+Updated 1 path from acf73bd
+➜  Unix_Git_Intro git:(main) ✗ cat test.txt
+➜  Unix_Git_Intro git:(main) ✗ git checkout HEAD test.txt
+Updated 1 path from 98af8d8
+➜  Unix_Git_Intro git:(main) ✗ cat test.txt
+testing
+test2
+➜  Unix_Git_Intro git:(main) ✗ git checkout b7d14460b25d25b03621e83e6dcd18b3d05367e4 test.txt
+➜  Unix_Git_Intro git:(main) ✗ cat test.txt
+```
