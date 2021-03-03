@@ -1,5 +1,15 @@
 # Intro to GitHub
 
+## Setting up GitHub on CL
+```
+$ git config --global user.name "Vlad Dracula"
+$ git config --global user.email "vlad@tran.sylvan.ia"
+```
+
+## Setting up Github SSH key (Optional)
+- https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+- https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+
 ## I want to create a new repository
 Manually go onto your profile, click the + button at the top right, and click either import or create new repository. We generally have been adding the MIT license to our public repositories (cupcakes and coding).
 example repo name: `GitUnix_Carpentries` (don't initialize ReadME)
@@ -130,12 +140,12 @@ Your branch is up to date with 'origin/main'.
 - Remember to git pull locally to get updates
 
 ## I want to revert file back to a previous commit
-- `HEAD` vs `HEAD~1` vs `HEAD~123`: The most recent end of the chain is referred to as HEAD; we can refer to previous commits using the ~ notation, so HEAD~1 means “the previous commit”, while HEAD~123 goes back 123 commits from where we are now.
+- `HEAD` vs `HEAD~1` vs `HEAD~123`: The most recent end of the chain is referred to as HEAD; we can refer to previous commits using the `~` notation, so `HEAD~1` means “the previous commit”, while `HEAD~123` goes back 123 commits from where we are now.
 - `git diff HEAD~3 file.txt`: get differences between a commit (HEAD~3) and our working directory
 - `git show HEAD~3 file.txt`: shows us what changes we made at an older commit (HEAD~3) as well as the commit message
 - `git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b file.txt`: get differences between working directory and particular commit id
 - `git checkout f22b25e3233b4645dabd0d81e651fe074bd8e73b file.txt`: checks out (i.e., restores) an old version of a file by commit id
--  `git checkout`: put things back the way they were 
+-  `git checkout`: put things back the way they were
 - `git log`: displays commits using those long strings of digits and letters
 example code:
 ```
