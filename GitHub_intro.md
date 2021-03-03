@@ -17,7 +17,7 @@ git push -u origin main
 ```
 
 ## I want to clone a repository and/or update
-Cloning means:
+Cloning means: copying repository locally
 - `git clone <https://github.com/username/example.git>`: you can find url on the repository you want to clone's home page. Click the green button that says "Clone or download" to do this
 - `git pull origin master`: updates your local clone copy and deleting all the changes you made but didn't commit. perform this command while in your local clone folder. `git fetch origin`: is less aggressive and will update your file with updates remote changes, without deleting the ones you've made
 
